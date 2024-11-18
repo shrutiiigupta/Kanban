@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import {User} from 'lucide-react';
 import Add from '../../assets/add.svg';
-import Down from '../../assets/down.svg';
-import Display from '../../assets/Display.svg';
 import Dots from '../../assets/3 dot menu.svg';
 import './KanbanBoard.css';
 import TicketCard from '../TicketCard/TicketCard';
 import { STATUS_ICONS, PRIORITY_MAP } from '../constants'; 
+import DisplayMenu from '../DisplayMenu/DisplayMenu';
 
 
 const KanbanBoard = () => {
@@ -147,50 +146,20 @@ const KanbanBoard = () => {
   return (
     <div className="kanban-container">
       <div className="kanban-wrapper">
-        <div className="display-button-container">
-            
-            <button
-                onClick={() => setShowDisplayMenu(!showDisplayMenu)}
-                className="display-button"
-            >
-                <img src={Display} alt="display icn" className="icon" />
-                <span>Display</span>
-                <img src={Down} alt="down icon" className="icon" />
-            </button>
-            
 
-          {showDisplayMenu && (
-            <div className="display-menu">
-              <div className="select-group">
-                <label className="select-label">Grouping</label>
-                <select
-                  value={grouping}
-                  onChange={(e) => setGrouping(e.target.value)}
-                  className="select-input"
-                >
-                  <option value="status">Status</option>
-                  <option value="user">User</option>
-                  <option value="priority">Priority</option>
-                </select>
-              </div>
-              <div className="select-group">
-                <label className="select-label">Ordering</label>
-                <select
-                  value={sorting}
-                  onChange={(e) => setSorting(e.target.value)}
-                  className="select-input"
-                >
-                  <option value="priority">Priority</option>
-                  <option value="title">Title</option>
-                </select>
-              </div>
-            </div>
-          )}
-        </div>
+        <DisplayMenu 
+          showDisplayMenu={showDisplayMenu} 
+          setShowDisplayMenu={setShowDisplayMenu} 
+          grouping={grouping} 
+          setGrouping={setGrouping} 
+          sorting={sorting} 
+          setSorting={setSorting} 
+        />
 
         <div className="groups-container">
           {renderGroups()}
         </div>
+
       </div>
     </div>
   );
