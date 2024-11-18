@@ -38,6 +38,9 @@ const DisplayMenu = ({ showDisplayMenu, setShowDisplayMenu, grouping, setGroupin
             <option value="title">Title</option>
           </select>
         </div>
+        <div onClick={() => setGrouping('status')}></div>
+        <div onClick={() => setGrouping('user')}></div>
+        <div onClick={() => setGrouping('priority')}></div>
       </div>
     )}
   </div>

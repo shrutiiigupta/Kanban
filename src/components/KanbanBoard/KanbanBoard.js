@@ -151,9 +151,15 @@ const KanbanBoard = () => {
           showDisplayMenu={showDisplayMenu} 
           setShowDisplayMenu={setShowDisplayMenu} 
           grouping={grouping} 
-          setGrouping={setGrouping} 
+          setGrouping={(value) => {
+            setGrouping(value); 
+            setShowDisplayMenu(false); 
+          }} 
           sorting={sorting} 
-          setSorting={setSorting} 
+          setSorting={(value) => {
+            setSorting(value); 
+            setShowDisplayMenu(false); 
+          }}
         />
 
         <div className="groups-container">
