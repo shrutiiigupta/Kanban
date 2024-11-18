@@ -1,7 +1,6 @@
 import React from 'react';
-import './TicketCard.css'; // Create and move styles specific to TicketCard here
-import { STATUS_ICONS, PRIORITY_MAP } from '../constants'; // Import if you store constants separately
-
+import './TicketCard.css'; 
+import { STATUS_ICONS, PRIORITY_MAP } from '../constants'; 
 const TicketCard = ({ ticket, users }) => {
   const assignedUser = users.find(user => user.id === ticket.userId);
 
@@ -20,10 +19,10 @@ const TicketCard = ({ ticket, users }) => {
         <div className="ticket-title">{ticket.title}</div>
       </div>
       <div className="ticket-footer">
-        <div className="status-icon-container">
+        <div className="prio-icon-container">
           {PRIORITY_MAP[ticket.priority].icon}
         </div>
-        <div className="tag">Feature Request</div>
+        <div className="tag">{ticket.tag}</div>
       </div>
     </div>
   );

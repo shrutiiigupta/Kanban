@@ -85,7 +85,6 @@ const KanbanBoard = () => {
       });
     }
 
-    // Sort tickets within each group
     Object.keys(groups).forEach(key => {
       groups[key] = sortTickets(groups[key]);
     });
@@ -102,10 +101,9 @@ const KanbanBoard = () => {
     return Object.entries(groups)
         .sort(([a], [b]) => {
         if (grouping === 'priority') {
-            // Sort based on custom order
             return customPriorityOrder.indexOf(a) - customPriorityOrder.indexOf(b);
         }
-        return 0; // No custom order for other groupings
+        return 0; 
         })
         .map(([groupName, groupTickets]) => (
         <div key={groupName} className="group-column">

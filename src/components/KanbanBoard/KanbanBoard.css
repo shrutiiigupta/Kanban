@@ -1,36 +1,29 @@
+body::-webkit-scrollbar { 
+    display: none;  
+}
 .kanban-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     background-color: #f3f4f6;
   }
+
   
   .kanban-wrapper {
-    flex: 1; /* Allow it to grow and take up space */
+    flex: 1; 
     display: flex;
     flex-direction: column;
     
   }
   
-  .nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-}
 
 .display-button-container {
-    
-    position: relative;
+    top: 0;
+    position: fixed;
     margin-bottom: 1.5rem;
     background-color: #ffffff;
     padding: 1rem;
     padding-left: 2rem;
+    width: 100%;
   }
   
   .display-button {
@@ -48,13 +41,11 @@
   .display-menu {
     position: absolute;
     top: 100%;
-    /* margin-top: 0.5rem; */
     background-color: white;
     border-radius: 6px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     min-width: 250px;
-    z-index: 10;
   }
   
   .select-group {
@@ -81,16 +72,18 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    margin-top: 0; /* Push it to the bottom if needed */
-    padding-left: 2rem; /* Space for horizontal scrollbar */
-    padding-right: 2rem; /* Space for horizontal scrollbar */
+    overflow-x: auto; 
+    overflow-y: auto; 
+    margin-top: 90px; 
+    padding-left: 2rem; 
+    padding-right: 2rem; 
+    height: 120vh;
+    
 
     
   }
   
   .group-column {
-    flex-shrink: 0; /* Prevent columns from shrinking */
     min-width: 300px;
     max-width: 300px;
     margin-right: 1.5rem;
@@ -169,8 +162,8 @@
   }
 
   .status-icon-container {
-    width: 20px; /* Fixed width for the icon */
-    height: 20px; /* Fixed height for the icon */
+    width: 20px;
+    height: 20px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -208,3 +201,109 @@
     height: 1rem;
   }
   
+
+@media (max-width: 768px) {
+  .kanban-container {
+      padding: 1rem;
+  }
+
+  .display-button-container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
+
+  .groups-container {
+      flex-direction: column;
+      padding-left: 0;
+      padding-right: 0;
+      margin-top: 80px;
+  }
+
+  .group-column {
+      min-width: 100%;
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 1rem;
+  }
+
+  .group-header {
+      flex-direction: row;
+      align-items: flex-start;
+  }
+
+  .group-actions {
+      flex-direction: row;
+      align-items: flex-start;
+  }
+
+  .display-menu {
+      min-width: 200px;
+  }
+
+  .ticket-card {
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+  }
+
+  .ticket-title-container {
+      flex-direction: row;
+      gap: 4px;
+  }
+
+  .ticket-footer {
+      flex-direction: row;
+  }
+
+  .ticket-title {
+      font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .display-button {
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0.5rem;
+  }
+
+  .group-header-left {
+      flex-direction: row;
+      align-items: flex-start;
+  }
+
+  .group-count {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .select-group {
+      font-size: 0.75rem;
+  }
+
+  .select-label {
+      font-size: 0.75rem;
+  }
+
+  .select-input {
+      padding: 0.25rem;
+  }
+
+  .group-actions {
+      flex-direction: row;
+      gap: 0.25rem;
+  }
+
+  .ticket-card {
+      padding: 0.5rem;
+  }
+
+  .ticket-header {
+      flex-direction: row;
+      align-items: flex-start;
+  }
+
+  .ticket-id {
+      font-size: 0.75rem;
+  }
+}

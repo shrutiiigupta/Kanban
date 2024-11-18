@@ -33,7 +33,7 @@
   .ticket-title-container {
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: 10px;
     margin-bottom: 0.8em;
   }
   
@@ -46,7 +46,7 @@
   .ticket-footer {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
   }
   
   .tag {
@@ -63,5 +63,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 0.2rem;
   }
+
+  .prio-icon-container {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 0.12rem;
+  }
+
   
