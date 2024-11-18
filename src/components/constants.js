@@ -1,17 +1,27 @@
 import React from 'react';
-import { Circle, AlertTriangle } from 'lucide-react';
+import Urgent from '../assets/urgentCol.svg';
+import High from '../assets/Img - High Priority.svg';
+import Low from '../assets/Img - Low Priority.svg';
+import Med from '../assets/Img - Medium Priority.svg';
+import No from '../assets/No-priority.svg';
+import Backlog from '../assets/Backlog.svg';
+import Done from '../assets/Done.svg';
+import InProg from '../assets/in-progress.svg';
+import Todo from '../assets/To-do.svg';
+import Cancel from '../assets/Cancelled.svg';
 
 export const PRIORITY_MAP = {
-  4: { label: 'Urgent', icon: <AlertTriangle className="icon icon-urgent" /> },
-  3: { label: 'High', icon: <Circle className="icon icon-high" /> },
-  2: { label: 'Medium', icon: <Circle className="icon icon-medium" /> },
-  1: { label: 'Low', icon: <Circle className="icon icon-low" /> },
-  0: { label: 'No Priority', icon: <Circle className="icon icon-no-priority" /> },
+  4: { label: 'Urgent', icon: <img src={Urgent} alt="urgent icon" className="icon"/> },
+  3: { label: 'High', icon: <img src={High} alt="high icn" className="icon " /> },
+  2: { label: 'Medium', icon: <img src={Med} alt="medium icon" className="icon " /> },
+  1: { label: 'Low', icon: <img src={Low} alt="low icon" className="icon" /> },
+  0: { label: 'No Priority', icon: <img src={No} alt="no icon" className="icon" /> },
 };
 
 export const STATUS_ICONS = {
-  Todo: <Circle className="icon status-todo" />,
-  'In progress': <Circle className="icon status-progress" />,
-  Backlog: <Circle className="icon status-canceled" />,
-  Done: <Circle className="icon status-done" />,
+  Todo: <img src={Todo} alt="Todo icon" className="icon"/> ,
+  'In progress': <img src={InProg} alt="inprog icon" className="icon"/> ,
+  Backlog: <img src={Backlog} alt="Backlog icon" className="icon"/> ,
+  Done: <img src={Done} alt="Done icon" className="icon"/>,
+  Cancelled: <img src={Cancel} alt="cancel icon" className="icon"/>,
 };

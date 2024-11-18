@@ -208,38 +208,3 @@
     height: 1rem;
   }
   
-  .icon-urgent {
-    color: #dc2626;
-  }
-  
-  .icon-high {
-    color: #eab308;
-  }
-  
-  .icon-medium {
-    color: #3b82f6;
-  }
-  
-  .icon-low {
-    color: #6b7280;
-  }
-  
-  .icon-no-priority {
-    color: #d1d5db;
-  }
-  
-  .status-todo {
-    color: #6b7280;
-  }
-  
-  .status-progress {
-    color: #eab308;
-  }
-  
-  .status-done {
-    color: #22c55e;
-  }
-  
-  .status-canceled {
-    color: #dc2626;
-  }

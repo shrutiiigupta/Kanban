@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { MoreHorizontal, ChevronDown, User, Plus } from 'lucide-react';
+import {User} from 'lucide-react';
+import Add from '../../assets/add.svg';
+import Down from '../../assets/down.svg';
+import Display from '../../assets/Display.svg';
+import Dots from '../../assets/3 dot menu.svg';
 import './KanbanBoard.css';
 import TicketCard from '../TicketCard/TicketCard';
 import { STATUS_ICONS, PRIORITY_MAP } from '../constants'; 
@@ -46,10 +50,11 @@ const KanbanBoard = () => {
     
     if (grouping === 'status') {
       groups = {
+        'Backlog': [],
         'Todo': [],
         'In progress': [],
-        'Backlog': [],
         'Done': [],
+        'Cancelled': [],
       };
       tickets.forEach(ticket => {
         const normStatus = ticket.status;
@@ -120,10 +125,12 @@ const KanbanBoard = () => {
             </div>
             <div className="group-actions">
                 <button className="action-button">
-                <Plus className="icon" />
+                   <img src={Add} alt="Add Icon" className="icon"/> 
+                
                 </button>
                 <button className="action-button">
-                <MoreHorizontal className="icon" />
+                <img src={Dots} alt="dots icn" className="icon" />
+                
                 </button>
             </div>
             </div>
@@ -148,9 +155,9 @@ const KanbanBoard = () => {
                 onClick={() => setShowDisplayMenu(!showDisplayMenu)}
                 className="display-button"
             >
-                <MoreHorizontal className="icon" />
+                <img src={Display} alt="display icn" className="icon" />
                 <span>Display</span>
-                <ChevronDown className="icon" />
+                <img src={Down} alt="down icon" className="icon" />
             </button>
             
 
